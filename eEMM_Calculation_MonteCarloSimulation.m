@@ -9,8 +9,8 @@ load('experimental_B1data.mat')
 
 %% User Input
 
-B1_perCh_Exp = experimental_B1data;      %per-channel experimental b1 data; 3D complex data with the format of [x,y,z,channels]
-B1_perCh_Sim = simulation_B1data;        %per-channel simulation b1 data; 3D complex data with the format of [x,y,z,channels]
+B1_perCh_Exp = experimental_B1data;      %per-channel experimental b1 data; 4D complex data with the format of [x,y,z,channels]
+B1_perCh_Sim = simulation_B1data;        %per-channel simulation b1 data; 4D complex data with the format of [x,y,z,channels]
 Q = simulation_Q_matrices;               %10g-averaged local SAR data;  3D complex data with the size of [# of channels x # of channels x # of voxels]
 
 
@@ -306,3 +306,4 @@ zmin = min(slices); zmax = max(slices);
 Vfixed_crop      = Vfixed(     rmin:rmax, cmin:cmax, zmin:zmax);
 Vmoving_reg_crop = Vmoving_reg(rmin:rmax, cmin:cmax, zmin:zmax);
 end
+
